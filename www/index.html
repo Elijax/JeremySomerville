@@ -17,7 +17,8 @@
     </script>-->
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="http://profit4referrals.com/jsom/css/style.css" rel="stylesheet">
+    <link href="http://profit4referrals.com/jsom/css/animate.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -29,9 +30,31 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.js"></script> 
+
+    <script src="http://profit4referrals.com/jsom/js/angularfire.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDfhMIyBV4X8cL8SfqoG3_CUJBQsFps778",
+        authDomain: "jeremysomerville-d26b8.firebaseapp.com",
+        databaseURL: "https://jeremysomerville-d26b8.firebaseio.com",
+        projectId: "jeremysomerville-d26b8",
+        storageBucket: "jeremysomerville-d26b8.appspot.com",
+        messagingSenderId: "960967668635"
+      };
+      firebase.initializeApp(config);
+    </script>
+
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+    <script src="http://profit4referrals.com/jsom/js/app.js"></script>
+    <script src="http://profit4referrals.com/jsom/js/controllers.js"></script>
+    <script src="http://profit4referrals.com/jsom/js/services.js"></script>
+    
+    <!-- your app's js -->
   </head>
 
   <body ng-app="starter">

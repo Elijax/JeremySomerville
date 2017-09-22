@@ -1,0 +1,50 @@
+<ion-view>
+	<ion-header-bar ng-if="bool_value" align-title="middle" class="bar-clear animate-if" style="background: rgba(0,0,0,0.4);">
+		<div class="buttons">
+			<button  class="button button-clear" ng-click="goBack()">
+				<i class="icon ion-arrow-left-a"></i>
+			</button>
+		</div>	
+	</ion-header-bar>		
+	<ion-content class="no-header" ng-click="showHeader(bool_value)" has-header="false" style="height:100%;">
+		<ion-slide-box show-pager="false" style="height: 100%">
+			<ion-slide>
+				<div style="text-align: center;-webkit-flex: auto;background: url('img/pic.jpg') no-repeat;background-size:cover;background-position: center;padding:0;height: 100%;">	
+					<div style="background-color:rgba(0,0,0,0.5);width:100%;position:absolute;bottom:10vh;height:15vh;margin:auto;padding-left: 25px;padding-right: 25px;">
+						<div style="margin-top:2vh">
+							<h3 style="color:white;">
+								FOTO FRENZY ON LADY ELLIOT ISLAND 2015
+							</h3>				
+						</div>
+					</div>
+				</div> 
+			</ion-slide>
+			<ion-slide>
+				<div style="width:100%;height: 100%">
+					<div style="margin-top:2vh;position:absolute;bottom:0;top:0;left:0;right:0;height:15vh;margin:auto;padding:10px">
+						<p style="color:black;text-align: center;">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, cumque vel doloremque laborum. Quaerat nulla eum in ullam adipisci veritatis voluptatibus quibusdam doloremque architecto, quae ea impedit voluptates a numquam!
+						</p>				
+					</div>
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div style="position:absolute;bottom:25vh;top:0;left:0;right:0;height:100%;margin:auto;height:25vh;">
+					<img src="img/pic.jpg" style="width: 100%;height: 40vh" alt="">
+					<p style="color:black;text-align: center;margin-top:10vh">
+						Swimming with the turtles on lady Elliot is a must do.
+					</p>				
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div style="text-align: center;-webkit-flex: auto;background: url('img/pic.jpg') no-repeat;background-size:cover;background-position: center;padding:0;height: 100%;">	
+				</div>
+			</ion-slide>													
+		</ion-slide-box>				
+  	</ion-content>
+</ion-view>
+<style>
+	.row, .scroll {
+	    height: 100%;
+	}	
+</style>

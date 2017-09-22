@@ -1,0 +1,33 @@
+<ion-view>
+	<ion-header-bar align-title="middle" class="bar-stable">
+		<div class="buttons">
+			<button class="button button-clear" ng-click="goBack()"><i class="icon ion-arrow-left-a"></i></button>
+		</div>
+		<h1 class="title">DETAILS</h1>
+		<div class="buttons">
+			<button class="button button-clear"><i class="icon ion-android-expand"></i></button>
+		</div>		
+	</ion-header-bar>		
+	<ion-content class="has-header" has-header="true">
+		<div style="background: url('img/pic.jpg') no-repeat;background-size:cover;background-position: center;height:50vh">
+		</div>	
+		<div class="list">
+			<div style="text-align: center" class="item item-text-wrap">
+				<h2><b>BREATH OF AIR</b></h2>					
+				<p align="left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus voluptate numquam temporibus, officiis corporis ducimus? Facilis quod quae dolorem, deserunt nam doloremque quas nostrum hic, praesentium dolore voluptates magnam. Ea.</p>
+			</div>												
+			<div ng-click="setWallpaper()" class="item item-icon-right" style="background-color: #f7f7f7">
+				<p style="font-size: 18px">iPhone Wallpaper</p>
+				<i class="icon ion-ios-arrow-right"></i>
+			</div>
+			<div ng-click="buyPrints()" class="item item-icon-right" style="background-color: #f7f7f7">
+				<p style="font-size: 18px">Buy Prints</p>
+				<i class="icon ion-ios-arrow-right"></i>
+			</div>
+			<div class="item item-icon-right" style="background-color: #f7f7f7">
+				<p style="font-size: 18px">Share Photo</p>
+				<i class="icon ion-ios-arrow-right"></i>
+			</div>
+		</div>
+  	</ion-content>
+</ion-view>

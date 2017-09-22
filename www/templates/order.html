@@ -1,0 +1,56 @@
+<ion-view>
+	<ion-header-bar align-title="middle" class="bar-stable">
+		<div class="buttons">
+			<button class="button button-clear" ng-click="goBack()"><i class="icon ion-arrow-left-a"></i></button>
+		</div>
+		<h1 class="title">PRINTS</h1>
+		<div class="buttons">
+			<button class="button button-clear"><i class="icon ion-android-expand"></i></button>
+		</div>		
+	</ion-header-bar>		
+	<ion-content class="has-header" has-header="true">
+		<div ng-style="{'background-image':'url('+env_picture.img+')'}" style="background-size:cover;background-position: center;height:57vh;background-repeat: no-repeat">
+			<img class="animate-height" ng-src="{{order.img}}" ng-style="{height:order.dimensions_fit+'vh'}" style="position: absolute;margin:auto;top:0;bottom:14vh;left:0;right: 0" alt="">
+		</div>	
+		<div style="margin:0" class="list">
+			<div style="padding: 0px" class="row">
+				<div ng-click="setEnvPicture(env_picture.img)" ng-repeat="env_picture in environmentPictures" style="padding: 0px;margin: 0" class="col col-20">
+					<img style="height:8vh;width:100%;" ng-src="{{env_picture.img}}" alt="">
+				</div>																						
+			</div>
+		</div>
+		<div style="margin:0" class="list">	
+			<div class="item">
+				<h1 style="font-size: 24px">{{order.type}}</h1>
+				<p style="font-size: 20px">{{order.dimensions}}"</p>
+				<span style="position: absolute;top: 5vh;right: 25px;margin:auto;color: black;font-size: 30px" class="item-note">${{order.price}}</span>
+			</div>
+			<div>
+				<p style="padding:15px;font-size: 18px">SIZE:</p>							
+				<div class="item range">
+					<i style="font-size: 14px" class="icon ion-image"></i>
+					<input type="range" min="1"  max="7" ng-model="order.dimensions_original" name="dimensions">
+					<i style="font-size: 24px" class="icon ion-image"></i>
+				</div>
+			</div>							
+			<div>
+				<p style="padding:15px;font-size: 18px">TYPE:</p>
+	  			<ion-radio name="type" ng-click="setOrderType(1)" ng-model="order.type" ng-value="'Metallic Print'">Metallic Print</ion-radio>
+				<ion-radio name="type" ng-click="setOrderType(2)" ng-model="order.type" ng-value="'Canvas Stretched'">Canvas Stretched</ion-radio>					
+				<ion-radio name="type" ng-click="setOrderType(3)" ng-model="order.type" ng-value="'Rolled Canvas'">Rolled Canvas</ion-radio>
+			</div>
+			<p style="padding:15px;font-size: 18px">SHIPPING:</p>
+  			<ion-radio name="shipping_type" ng-model="order.shipping_type" ng-value="'Australia'">Australia (FREE)</ion-radio>
+			<ion-radio name="shipping_type" ng-model="order.shipping_type" ng-value="'International'">International (On Request)</ion-radio>
+			<div class="item">
+				<h1 style="font-size: 24px">Breath of Air</h1>
+				<p><span style="text-transform: capitalize;">{{order.type}}</span> - {{order.dimensions}}"</p>
+				<p>Shipping To: {{order.shipping_type}}</p>
+				<span style="position: absolute;top: 5vh;right: 25px;margin:auto;color: black;font-size: 30px" class="item-note">${{order.price}}</span>
+				<button class="button button-block button-positive">
+					Pay With PayPal
+				</button>								
+			</div>			
+		</div>
+  	</ion-content>
+</ion-view>

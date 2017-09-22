@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -25,49 +25,73 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+  .state('main', {
+    url: '/main',      
+    templateUrl: 'templates/main.html',
+    controller: 'MainCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
+  .state('home', {
+    url: '/home',      
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
+  .state('latest', {
+    url: '/latest',   
+    templateUrl: 'templates/latest.html',
+    controller: 'LatestCtrl'
+  })
+  
+  .state('gallery', {
+    url: '/gallery',      
+    templateUrl: 'templates/gallery.html',
+    controller: 'GalleryCtrl'
+  })
 
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
+  .state('picture', {
+    url: '/picture/:id',      
+    templateUrl: 'templates/picture.html',
+    controller: 'PictureCtrl'
+  })  
+
+  .state('wallpaper', {
+    url: '/wallpaper/:id',
+    templateUrl: 'templates/wallpaper.html',
+    controller: 'WallpaperCtrl'
+  })   
+
+  .state('order', {
+    url: '/order/:id',      
+    templateUrl: 'templates/order.html',
+    controller: 'OrderCtrl'
+  })      
+
+  .state('stories', {
+    url: '/stories',
+    templateUrl: 'templates/stories.html',
+    controller: 'StoriesCtrl'
+  })     
+
+  .state('story', {
+    url: '/story/:id',      
+    templateUrl: 'templates/story.html',
+    controller: 'StoryCtrl'
+  })    
+
+  .state('about', {
+    url: '/about',
+    templateUrl: 'templates/about.html',
+    controller: 'AboutCtrl'
+  })
+
+  .state('settings', {
+    url: '/settings',      
+    templateUrl: 'templates/settings.html',
+    controller: 'SettingsCtrl'
+  }); 
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
-});
+  $urlRouterProvider.otherwise('/main');
+})
+.constant('FBURL', 'https://jeremysomerville-d26b8.firebaseio.com');
